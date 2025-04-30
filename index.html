@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Fundamentos de Administración</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f6fa;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #2c3e50;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 20px;
+      z-index: 2;
+    }
+
+    .sidebar a {
+      padding: 15px 25px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #ecf0f1;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #34495e;
+    }
+
+    .sidebar .toggle-btn {
+      position: absolute;
+      top: 10px;
+      right: -40px;
+      background-color: #2c3e50;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .main {
+      margin-left: 260px;
+      padding: 20px;
+    }
+
+    .intro-image {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      color: #2c3e50;
+      margin-top: 20px;
+    }
+
+    .section {
+      margin: 30px 0;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    blockquote {
+      margin: 15px 0;
+      font-style: italic;
+      color: #7f8c8d;
+    }
+
+    .curiosities, .tools {
+      background-color: #ecf0f1;
+      padding: 15px;
+      border-left: 5px solid #3498db;
+      margin-top: 10px;
+    }
+
+    .btn-toggle {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-toggle:hover {
+      background-color: #2980b9;
+    }
+
+    .hidden-content {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #dff9fb;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar" id="sidebar">
+    <div class="toggle-btn" onclick="toggleSidebar()">☰</div>
+    <a href="#liderazgo">Liderazgo</a>
+    <a href="#gestion">Gestión</a>
+    <a href="#decisiones">Toma de Decisiones</a>
+    <a href="#estrategia">Estrategia</a>
+    <a href="#herramientas">Herramientas Digitales</a>
+  </div>
+
+  <div class="main">
+    <img src="https://images.unsplash.com/photo-1562577309-2592ab84b1bc?auto=format&fit=crop&w=1200&q=80" alt="Imagen de administración" class="intro-image">
+
+    <h1>Curso: Fundamentos de Administración</h1>
+    <p>Aprende a fortalecer tu perfil profesional desde los pilares clave de la administración moderna.</p>
+
+    <div class="section" id="liderazgo">
+      <h2>Liderazgo</h2>
+      <p>Capacidad de inspirar y guiar a un equipo hacia objetivos comunes.</p>
+      <blockquote>"Un líder es mejor cuando la gente apenas sabe que existe." – Lao Tzu</blockquote>
+      <button class="btn-toggle" onclick="toggleContent('liderazgo-extra')">Ver más</button>
+      <div id="liderazgo-extra" class="hidden-content">
+        <p><strong>Dato curioso:</strong> Los líderes efectivos dedican el 70% de su tiempo a escuchar, no a hablar.</p>
+      </div>
+    </div>
+
+    <div class="section" id="gestion">
+      <h2>Gestión</h2>
+      <p>Organizar, planificar y supervisar para cumplir objetivos estratégicos.</p>
+      <blockquote>"Gestionar es hacer las cosas bien; liderar es hacer las cosas correctas." – Peter Drucker</blockquote>
+      <button class="btn-toggle" onclick="toggleContent('gestion-extra')">Ver más</button>
+      <div id="gestion-extra" class="hidden-content">
+        <p><strong>Dato curioso:</strong> Mary Parker Follett es considerada una de las madres de la gestión moderna.</p>
+      </div>
+    </div>
+
+    <div class="section" id="decisiones">
+      <h2>Toma de Decisiones</h2>
+      <p>Seleccionar la mejor opción posible bajo criterios objetivos y racionales.</p>
+      <blockquote>"No tomar una decisión ya es una decisión." – William James</blockquote>
+      <button class="btn-toggle" onclick="toggleContent('decisiones-extra')">Ver más</button>
+      <div id="decisiones-extra" class="hidden-content">
+        <p><strong>Dato curioso:</strong> Hacemos más de 35,000 decisiones al día, muchas sin darnos cuenta.</p>
+      </div>
+    </div>
+
+    <div class="section" id="estrategia">
+      <h2>Estrategia</h2>
+      <p>Diseñar planes a largo plazo para lograr ventajas competitivas sostenibles.</p>
+      <blockquote>"La estrategia sin táctica es el camino más lento hacia la victoria." – Sun Tzu</blockquote>
+      <button class="btn-toggle" onclick="toggleContent('estrategia-extra')">Ver más</button>
+      <div id="estrategia-extra" class="hidden-content">
+        <p><strong>Dato curioso:</strong> Sun Tzu escribió "El arte de la guerra" hace más de 2,500 años y sigue siendo relevante hoy.</p>
+      </div>
+    </div>
+
+    <div class="section" id="herramientas">
+      <h2>Herramientas Digitales</h2>
+      <div class="tools">
+        <ul>
+          <li><strong>Trello:</strong> Gestión de proyectos y equipos.</li>
+          <li><strong>Notion:</strong> Organización personal y trabajo colaborativo.</li>
+          <li><strong>Canva:</strong> Diseño visual de presentaciones y documentos.</li>
+          <li><strong>Google Workspace:</strong> Colaboración en línea con Docs, Sheets y Drive.</li>
+          <li><strong>MindMeister:</strong> Creación de mapas mentales estratégicos.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      if (sidebar.style.width === "60px") {
+        sidebar.style.width = "250px";
+        document.querySelector(".main").style.marginLeft = "260px";
+      } else {
+        sidebar.style.width = "60px";
+        document.querySelector(".main").style.marginLeft = "70px";
+      }
+    }
+
+    function toggleContent(id) {
+      const content = document.getElementById(id);
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    }
+  </script>
+
+</body>
+</html>
+
